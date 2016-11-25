@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+
+<title>Artur Malinowski assigment webdevelopment</title>
+	<meta charset="utf-8"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css" type="text/css"/> 
+	<link rel="stylesheet" href="css/papper.css" type="text/css"/> 
+	<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	</head>
+<body>
+<script>
+   var form = document.getElementsByTagName('form')[0];
+   form.addEventListener('submit',contact,false);
+   function contact(e) {
+      // Prevent Default Form Submission
+      e.preventDefault();
+
+      var target = e.target || e.srcElement;
+      var i = 0;
+      var message = '';
+
+      // Loop Through All Input Fields
+      for(i = 0; i < target.length; ++i) {
+         // Check to make sure it's a value. Don't need to include Buttons
+         if(target[i].type != 'text' && target[i].type != 'textarea') {
+                // Skip to next input since this one doesn't match our rules
+            continue;
+         }
+
+         // Add Input Name and value followed by a line break
+         message += target[i].name + ': ' + target[i].value + "\r\n";
+      }
+      // Modify the hidden body input field that is required for the mailto: scheme
+      target.elements["body"].value = message;
+
+      // Submit the form since we previously stopped it. May cause recursive loop in some browsers? Should research this.
+      this.submit();
+   }
+</script>
+
+
+
+<div id="box">
+<div id="title">
+<a href="index.html">
+ <br/> <span style="font-size:60px;font-family:'Arizonia';">Artur</span>
+ <br/><span style="font-size:60px;font-family:'Arizonia';">Malinowski</span></a></div>
+<div id="mediumpart">
+<div id="topside">
+	<div id="topsidemenu">
+		<div class="links">
+			<a href="mycv.html">
+			<i class="icon-user"></i>CV</a>
+		</div>
+		<div class="links">
+			<a href="about.html">
+			<i class="icon-file-word"></i>About-Me</a>
+		</div>
+        <div class="links">
+				<a href="https://uk.linkedin.com/in/artur-malinowski-0a7256133" target="_blank">
+				<i class="icon-twitter"></i>Linkedin
+				</a>
+			</div>
+		<div class="links">
+			<a href="http://users.aber.ac.uk/arm18/wordpress/" target="_blank">BlogAbout-Me
+			</a>
+			</div>
+		<div class="links">
+			<a href="http://users.aber.ac.uk/arm18/webshop/catalog/" target="_blank">E-commerce
+			</a>
+		</div>
+		
+		<div style="clear:both"></div>
+	</div>
+</div>
+<div id="content">
+<div id="welcome">If you want contact me please complete form Below </div>
+<div id="contact-form" class="clearfix">
+    <h1>Get In Touch!</h1>
+    <h2>Fill out our  HTML5 contact form below to get in touch with me!  :)</h2>
+    <ul id="errors" class="">
+        <li id="info">There were some problems with your form submission:</li>
+    </ul>
+    <p id="success">Thanks for your message! We will get back to you ASAP!</p>
+    <form method="post" action="process.php">
+        <label for="name">Name: <span class="required">*</span></label>
+        <input type="text" id="name" name="name" value="" placeholder="John Doe" required="required" autofocus="autofocus" />
+         
+        <label for="email">Email Address: <span class="required">*</span></label>
+        <input type="email" id="email" name="email" value="" placeholder="johndoe@example.com" required="required" />
+         
+        <label for="telephone">Telephone: </label>
+        <input type="tel" id="telephone" name="telephone" value="" />
+         
+        <label for="enquiry">Enquiry: </label>
+        <select id="enquiry" name="enquiry">
+            <option value="Job Offer">Job Offer</option>
+            <option value="Contact">Contact</option>
+            <option value="Support">Support</option>
+        </select>
+         
+        <label for="message">Message: <span class="required">*</span></label>
+        <textarea id="message" name="message" placeholder="Your message must be greater than 20 charcters" required="required" data-minlength="20"></textarea>
+         
+        <span id="loading"></span>
+        <input type="submit" value="Holla!" id="submit-button" />
+        <p id="req-field-desc"><span class="required">*</span> indicates a required field</p>
+    </form>
+</div>
+	
+	<div id="footer">
+	<script>
+var lastmod=document.lastModified;
+var n = lastmod.toLocaleString();
+document.write("The last modified-"+n);
+</script>
+<br>
+	The information provided on this and other pages by me, Artur Malinowski (arm18@aber.ac.uk), is
+under my own personal responsibility and not that of Aberystwyth University.
+Similarly,any opinions expressed are my own and are in no way to be taken as those of A.U.
+Note that this page states:
+The  use  of  the  University's  logo  or  crest  is  not  allowed  on
+individual user's[sic] web pages.
+<br/>
+I declare that  the  contents  of  this  site  are  entirely  my  own  work,  except table and list,  which  came  from
+http://www.w3schools.com/html/".
+
+
+
+	</div>
+</div>
+</body>
+
+</html>
